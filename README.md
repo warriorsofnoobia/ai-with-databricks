@@ -137,7 +137,7 @@ Here is how the creation page looks like (showing external provider models):
 
 ![](./resources/databricks-ai-gateway-create-ai-gateway-endpoint-use-external-provider.png)
 
-> **NOTE**: *Notice that you can select your own external-provider-using serving endpoint here. In this case, the endpoint created by me in [METHOD: Model Serving: Using External Model](#method-model-serving-using-external-model) (`test-openai-endpoint`) is also visible in the options.*
+> **NOTE**: *Notice that you can select your own external-provider-using serving endpoint here. In this case, 2 model serving endpoints created by me (`openai-endpoint` and `test`) are also visible in the options.*
 
 ## Create Databricks Access Token
 **See**: [`create-databricks-access-token.md`](./create-databricks-access-token.md)
