@@ -19,6 +19,7 @@
   - [Create Databricks Access Token](#create-databricks-access-token-1)
   - [Testing the Endpoint via cURL](#testing-the-endpoint-via-curl)
   - [Testing the Endpoint via Python](#testing-the-endpoint-via-python-1)
+- [Using AI Playground](#using-ai-playground)
 
 ---
 
@@ -142,3 +143,9 @@ Copy the generated key for future use.
 
 ## Testing the Endpoint via Python
 [`scripts/ai-gateway-example.py`](./scripts/ai-gateway-example.py)
+
+# Using AI Playground
+AI Playground in Databricks offers a web UI to test:
+
+- AI gateway endpoints
+- Model serving endpoints
