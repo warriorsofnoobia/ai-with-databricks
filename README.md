@@ -69,7 +69,7 @@ After choosing the "OpenAI API type" as "OpenAI":
 
 ![](./resources/databricks-create-model-serving-endpoint-openai-selected-2.png)
 
-In the "OpenAI API key secret" entry, add the API key secret generated and copied in the previous section. This is what Databricks will use to authorise its requests to the external model. Finally, specify the "Provider model" to be used:
+In the "OpenAI API key secret" entry, add the API key secret generated and copied in the previous section. This is what Databricks will use to authorise its requests to the external model. Finally, specify the "Task type" (in this example, "Chat" is chosen) and "Provider model" to be used (in this example, `gpt-5-mini` is given):
 
 ![](./resources/databricks-create-model-serving-endpoint-openai-selected-3.png)
 
