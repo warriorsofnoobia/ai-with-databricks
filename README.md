@@ -65,11 +65,15 @@ The result is as follows (after naming the model endpoint to `test-openai-endpoi
 
 > *Notice that "Entity" has been renamed to "Provider" here.*
 
-After choosing the OpenAI API type as "OpenAI":
+After choosing the "OpenAI API type" as "OpenAI":
 
 ![](./resources/databricks-create-model-serving-endpoint-openai-selected-2.png)
 
-In the "OpenAI API key secret" entry, add the API key secret generated and copied in the previous section. This is what Databricks will use to authorise its requests to the external model.
+In the "OpenAI API key secret" entry, add the API key secret generated and copied in the previous section. This is what Databricks will use to authorise its requests to the external model. Finally, specify the "Provider model" to be used:
+
+![](./resources/databricks-create-model-serving-endpoint-openai-selected-3.png)
+
+Hit "Create".
 
 ## Create Databricks Access Token
 **See**: [`create-databricks-access-token.md`](./create-databricks-access-token.md)
