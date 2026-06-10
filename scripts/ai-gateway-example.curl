@@ -1,0 +1,12 @@
+curl https://<your-workspace-id>.cloud.databricks.com/ai-gateway/mlflow/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <your-databricks-access-token-key>" \
+  -d '{
+    "model": "<your-model-name>",
+    "max_tokens": 1024,
+    "messages": [
+      {"role": "user", "content": "Hello!"},
+      {"role": "assistant", "content": "Hello! How can I assist you today?"},
+      {"role": "user", "content": "What is Databricks?"}
+    ]
+  }'
