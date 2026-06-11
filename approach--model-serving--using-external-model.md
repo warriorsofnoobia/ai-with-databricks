@@ -1,6 +1,9 @@
 <h1>APPROACH: Model Serving: Using External Model</h1>
 
-> **NOTE**: *This consumes credits from the model provider and not Databricks credits. The model serving endpoint acts merely as a middleman to route API requests and responses.*
+> **NOTE**:
+> 
+> - This consumes credits from the model provider and not Databricks credits
+> - The model serving endpoint acts merely as a middleman to route API requests and responses
 
 ---
 
@@ -29,7 +32,7 @@ For OpenAI, go to the following:
 
 ![](./resources/platform.openai.com/api-keys.png)
 
-> **NOTE**: *To access the above page for your purposes, you may have to create an OpenAI organisation account, but although it is called "organisation account", it can be used for personal use with no added steps. In my case, I have named my organisation "Personal", indicating that it is for personal use.*
+> **NOTE**: To access the above page for your purposes, you may have to create an OpenAI organisation account, but although it is called "organisation account", it can be used for personal use with no added steps. In my case, I have named my organisation "Personal", indicating that it is for personal use.
 
 Create either a personal API key or a service account.
 
@@ -85,4 +88,4 @@ user --(request)-->
 
 ---
 
-> **NOTE**: *There is a cURL equivalent for this.*
+> **NOTE**: There is a cURL equivalent for this.

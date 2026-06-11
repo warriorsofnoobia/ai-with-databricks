@@ -13,6 +13,12 @@
   - [Install VS Code](#install-vs-code)
   - [Install the Continue Extension for VS Code](#install-the-continue-extension-for-vs-code)
   - [Setup Endpoint](#setup-endpoint)
+  - [Configure Continue](#configure-continue)
+    - [Open Configuration File](#open-configuration-file)
+    - [Add AI Endpoint Details to Configuration File](#add-ai-endpoint-details-to-configuration-file)
+    - [KEY POINT: Use Databricks Access Token Scoped to `all APIs`](#key-point-use-databricks-access-token-scoped-to-all-apis)
+    - [Save the Configuration File](#save-the-configuration-file)
+    - [Open Continue Chat UI in VS Code](#open-continue-chat-ui-in-vs-code)
 
 ---
 
@@ -57,3 +63,73 @@ You can do this within VS Code, using the extensions tab in the sidebar:
 ![](./resources/installed-continue-extension-for-vscode.png)
 
 ## Setup Endpoint
+Possible approaches:
+
+- [`approach--model-serving--using-external-model.md`](./approach--model-serving--using-external-model.md)
+- [`approach--model-serving--using-built-in-model.md`](./approach--model-serving--using-built-in-model.md)
+- [`approach--ai-gateway.md`](./approach--ai-gateway.md)
+
+> **NOTE**: The Databricks access token must be scoped to `all APIs`.
+> 
+> **See**: ["KEY POINT: Use Databricks Access Token Scoped to `all APIs`" in this document](#key-point-use-databricks-access-token-scoped-to-all-apis)
+
+## Configure Continue
+### Open Configuration File
+In your system, open:
+
+```
+~/continue/config.yaml
+```
+
+If freshly installed, the file's contents would look like this:
+
+```yaml                                                                     
+name: Local Config
+version: 1.0.0
+schema: v1
+models: []
+```
+
+### Add AI Endpoint Details to Configuration File
+We only need to list items under `models`, in the following format:
+
+```yaml
+- name: <your-databricks-ai-endpoint-name>
+  provider: <your-endpoint-provider> # will always be openai, since we are using OpenAI-compatible APIs
+  model: <model-chosen-for-your-ai-endpoint> # must match your endpoint's model name exactly; e.g. gpt-5-mini
+  apiBase: https://<your-databricks-workspace-id>.cloud.databricks.com/serving-endpoints/<your-databricks-ai-endpoint-name>/invocations
+  apiKey: <your-databricks-access-token> # scoped to all APIs (see the next section for details)
+  roles:
+    - chat
+```
+
+### KEY POINT: Use Databricks Access Token Scoped to `all APIs`
+Using a Databricks acces token not scoped to `all APIs` would lead to the following error:
+
+![](./resources/vscode-continue-error-handling-model-response-provided-access-token-does-not-have-required-scopes-all-apis.png)
+
+Viewing the complete error logs:
+
+```log
+[@continuedev] error: HTTP 403 Forbidden from https://<redacted>.cloud.databricks.com/serving-endpoints/open-ai-endpoint/invocations/responses
+{"error_code":403,"message":"Provided access token does not have required scopes: all-apis [ReqId: c1012946-f219-4fa3-9378-25c2727b68f4]"} {"context":"llm_stream_chat","model":"gpt-5-mini","provider":"openai","useOpenAIAdapter":true,"streamEnabled":true,"templateMessages":false}
+```
+
+> **NOTE**: Here, I am using a previously created model serving endpoint called `open-ai-endpoint`.
+
+### Save the Configuration File
+![](./resources/palps-says-do-it.gif)
+
+### Open Continue Chat UI in VS Code
+**Shortcut**: `Cmd + L` or `Ctrl + L`
+
+> **NOTE**: You can access Continue-related commands in VS Code by:
+> 
+> 1. Going to "Help >> Show All Commands" in the menu bar (shortcut: `Cmd + Shift + P` or `Ctrl + Shift + P`)
+> 2. Searching "Continue" in the search bar
+
+The chat UI would look something like this:
+
+![](./resources/vscode-continue-chat-ui.png)
+
+Notice that you can select and use the model you added in the configuration file.

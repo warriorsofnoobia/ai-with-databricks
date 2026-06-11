@@ -2,7 +2,7 @@
 
 ---
 
-> **NOTE**: *This consumes Databricks credits.*
+> **NOTE**: This consumes Databricks credits.
 
 This has a very similar approach to [`approach--model-serving--using-external-model.md`](./approach--model-serving--using-external-model.md), but without the need to concern with the provider's API key. There are other settings that become relevant with built-in models (such as "Provisional Throughput") but these shall not be discussed for now. An illustrated example is shown below for the built-in model Llama 4 Maverick:
 

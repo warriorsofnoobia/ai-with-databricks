@@ -16,7 +16,7 @@ Go to your account's settings:
 
 Select the "Developer" tab:
 
-> **NOTE**: *This option is only available with admin access.*
+> **NOTE**: This option is only available with admin access.
 
 ![](./resources/databricks-settings-developer.png)
 
