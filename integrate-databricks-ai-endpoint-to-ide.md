@@ -1,5 +1,7 @@
 <h1>Integrate Databricks AI Endpoint to IDE</h1>
 
+> **CAUTION**: This document's contents are still pending verification and updates.
+
 ---
 
 **Contents**:
@@ -101,11 +103,16 @@ We only need to list items under `models`, in the following format:
 - name: <your-databricks-ai-endpoint-name>
   provider: <your-endpoint-provider> # will always be openai, since we are using OpenAI-compatible APIs
   model: <model-chosen-for-your-ai-endpoint> # must match your endpoint's model name exactly; e.g. gpt-5-mini
-  apiBase: https://<your-databricks-workspace-id>.cloud.databricks.com/serving-endpoints/<your-databricks-ai-endpoint-name>/invocations
+  apiBase: <base-url> # See below
   apiKey: <your-databricks-access-token> # scoped to all APIs (see the next section for details)
   roles:
     - chat
 ```
+
+Base URLs:
+
+- For model-serving endpoint: <br> `https://<your-databricks-workspace-id>.cloud.databricks.com/serving-endpoints/<your-databricks-ai-endpoint-name>/invocations`
+- For AI Gateway endpoint: <br> `https://<your-databricks-workspace-id>.cloud.databricks.com/ai-gateway/mlflow/v1`
 
 This is how the above would sit in the configuration file:
 

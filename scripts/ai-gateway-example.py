@@ -6,7 +6,7 @@ DATABRICKS_TOKEN = os.environ.get('DATABRICKS_TOKEN')
 
 client = OpenAI(
   api_key="<your-databricks-access-token-key>", # Your Databricks access token scoped to `ai-gateway`
-  base_url="https://dbc-c8b98f16-c6e2.cloud.databricks.com/ai-gateway/mlflow/v1"
+  base_url="https://<your-databricks-workspace-id>.cloud.databricks.com/ai-gateway/mlflow/v1"
 )
 
 chat_completion = client.chat.completions.create(
