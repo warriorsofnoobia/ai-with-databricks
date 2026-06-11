@@ -62,6 +62,10 @@ You can do this within VS Code, using the extensions tab in the sidebar:
 
 ![](./resources/installed-continue-extension-for-vscode.png)
 
+> You can also access its Marketplace listing online:
+> 
+> **See**: [`marketplace.visualstudio.com/items?itemName=Continue.continue`](https://marketplace.visualstudio.com/items?itemName=Continue.continue)
+
 ## Setup Endpoint
 Possible approaches:
 
