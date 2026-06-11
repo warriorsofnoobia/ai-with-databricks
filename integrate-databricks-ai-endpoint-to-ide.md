@@ -130,6 +130,8 @@ Using a Databricks acces token not scoped to `all APIs` would lead to the follow
 
 ![](./resources/vscode-continue-error-handling-model-response-provided-access-token-does-not-have-required-scopes-all-apis.png)
 
+> To see how to open the above chat UI, see ["Open Continue Chat UI in VS Code" in this document](#open-continue-chat-ui-in-vs-code).
+
 Viewing the complete error logs:
 
 ```log
