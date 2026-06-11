@@ -103,6 +103,24 @@ We only need to list items under `models`, in the following format:
     - chat
 ```
 
+This is how the above would sit in the configuration file:
+
+```yaml                                                                     
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: <your-databricks-ai-endpoint-name>
+    provider: <your-endpoint-provider> # will always be openai, since we are using OpenAI-compatible APIs
+    model: <model-chosen-for-your-ai-endpoint> # must match your endpoint's model name exactly; e.g. gpt-5-mini
+    apiBase: https://<your-databricks-workspace-id>.cloud.databricks.com/serving-endpoints/<your-databricks-ai-endpoint-name>/invocations
+    apiKey: <your-databricks-access-token> # scoped to all APIs (see the next section for details)
+    roles:
+      - chat
+```
+
+> **NOTE**: You can add multiple models in the same way.
+
 ### KEY POINT: Use Databricks Access Token Scoped to `all APIs`
 Using a Databricks acces token not scoped to `all APIs` would lead to the following error:
 
@@ -132,4 +150,8 @@ The chat UI would look something like this:
 
 ![](./resources/vscode-continue-chat-ui.png)
 
-Notice that you can select and use the model you added in the configuration file.
+Notice:
+
+- You can select and use the model you added in the configuration file
+- In the above image, I have selected my model serving endpoint `open-ai-endpoint`
+- In the configuration file, you can add multiple models, then select any one in the chat UI <br> **See**: ["Add AI Endpoint Details to Configuration File" in this document](#add-ai-endpoint-details-to-configuration-file)
