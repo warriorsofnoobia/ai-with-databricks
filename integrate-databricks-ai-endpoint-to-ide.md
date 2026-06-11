@@ -115,10 +115,10 @@ version: 1.0.0
 schema: v1
 models:
   - name: <your-databricks-ai-endpoint-name>
-    provider: <your-endpoint-provider> # will always be openai, since we are using OpenAI-compatible APIs
-    model: <model-chosen-for-your-ai-endpoint> # must match your endpoint's model name exactly; e.g. gpt-5-mini
+    provider: <your-endpoint-provider>
+    model: <model-chosen-for-your-ai-endpoint>
     apiBase: https://<your-databricks-workspace-id>.cloud.databricks.com/serving-endpoints/<your-databricks-ai-endpoint-name>/invocations
-    apiKey: <your-databricks-access-token> # scoped to all APIs (see the next section for details)
+    apiKey: <your-databricks-access-token>
     roles:
       - chat
 ```
