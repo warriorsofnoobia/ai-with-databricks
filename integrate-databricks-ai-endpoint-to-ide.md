@@ -124,7 +124,7 @@ models:
   - name: <your-databricks-ai-endpoint-name>
     provider: <your-endpoint-provider>
     model: <model-chosen-for-your-ai-endpoint>
-    apiBase: https://<your-databricks-workspace-id>.cloud.databricks.com/serving-endpoints/<your-databricks-ai-endpoint-name>/invocations
+    apiBase: <base-url>
     apiKey: <your-databricks-access-token>
     roles:
       - chat
