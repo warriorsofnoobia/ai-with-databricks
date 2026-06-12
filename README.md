@@ -15,7 +15,7 @@
 
 ---
 
-# KEY POINT: OpenAI-Compatible REST API for Model Access
+# NOTE: OpenAI-Compatible REST API for Model Access
 Databricks Mosaic AI Model Serving and the Unity AI Gateway expose a unified, OpenAI-compatible REST API across all supported foundational LLMs. This standardizes the interface, allowing you to use standard openai library code to query Anthropic Claude models natively or externally hosted within your Databricks workspace.
 
 # APPROACH: Model Serving: Using External Model
